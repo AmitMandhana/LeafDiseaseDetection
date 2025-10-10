@@ -33,6 +33,19 @@ for entry in raw:
     desc = entry.get('description') or ' '.join([entry.get(k, '') for k in ('leaf_symptoms','disease_conditions','fruit_effects')])
     corpus.append({'name': name, 'description': desc})
 
+def ensemble_predictions(models, query, corpus_embeddings):
+    combined_scores = None
+    for model_name, model in models:
+        q_emb = model.encode(query, convert_to_tensor=True)
+        scores = util.pytorch_cos_sim(q_emb, corpus_embeddings)[0]
+        if combined_scores is None:
+            combined_scores = scores
+        else:
+            combined_scores += scores
+    # Average the scores across models
+    combined_scores /= len(models)
+    return combined_scores
+
 queries = [
     ("Leaves are yellowing with small brown spots, fruit looks scabby", 'expected: Tomato Bacterial Spot or Pepper Bacterial Spot'),
     ("My tomato leaves have white powdery stuff and some curling", 'expected: Tomato Powdery Mildew or Powdery Mildew'),
@@ -51,3 +64,15 @@ for model_name, model in models_to_check:
         for score, idx in zip(topk[0], topk[1]):
             i = int(idx.item())
             print(f"   {corpus[i]['name']} — {float(score):.4f}")
+
+# Ensemble evaluation
+print('\n--- ENSEMBLE MODEL ---')
+corpus_embeddings = [model.encode([c['description'] for c in corpus], convert_to_tensor=True) for _, model in models_to_check]
+for q, note in queries:
+    combined_scores = ensemble_predictions(models_to_check, q, corpus_embeddings)
+    topk = torch.topk(combined_scores, k=3)
+    print('\nQuery:', q)
+    print('  Note:', note)
+    for score, idx in zip(topk[0], topk[1]):
+        i = int(idx.item())
+        print(f"   {corpus[i]['name']} — {float(score):.4f}")

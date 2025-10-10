@@ -14,6 +14,8 @@ Notes:
 """
 from sentence_transformers import SentenceTransformer, InputExample, losses
 from torch.utils.data import DataLoader
+from torch.nn import BCEWithLogitsLoss
+import torch
 import json
 import random
 import os
@@ -76,7 +78,10 @@ def build_dataset(json_path="disease_data.json"):
         queries = synthesize_queries(entry, n=6)
         for q in queries:
             texts.append(q)
-            labels.append(lid)
+            # Multi-label: create a binary vector for each label
+            label_vector = [0] * len(label_map)
+            label_vector[lid] = 1
+            labels.append(label_vector)
     # simple train/val split
     combined = list(zip(texts, labels))
     random.shuffle(combined)
@@ -92,25 +97,30 @@ def main():
 
     model = SentenceTransformer(BASE_MODEL)
 
-    # We'll fine-tune using a classification approach: mean pooling encoder + small MLP head.
-    # sentence-transformers provides losses for such tasks; we'll use SoftmaxLoss.
-    from sentence_transformers.losses import SoftmaxLoss
+    # Multi-label classification setup
     num_labels = len(label_map)
-
-    # SoftmaxLoss expects pair-shaped inputs (two texts) in this training loop.
-    # To keep the dataset simple we duplicate the sentence as the second text.
-    train_examples = [InputExample(texts=[t, t], label=l) for t, l in train]
+    train_examples = [InputExample(texts=[t, t], label=torch.tensor(l, dtype=torch.float32)) for t, l in train]
     train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=BATCH_SIZE)
-    train_loss = SoftmaxLoss(model=model, sentence_embedding_dimension=model.get_sentence_embedding_dimension(), num_labels=num_labels)
 
-    # validation optional — we won't use a complicated evaluator here to keep it small
+    # Use BCEWithLogitsLoss for multi-label classification
+    train_loss = BCEWithLogitsLoss()
 
-    model.fit(
-        train_objectives=[(train_dataloader, train_loss)],
-        epochs=EPOCHS,
-        warmup_steps=10,
-        show_progress_bar=True
-    )
+    # Custom training loop for multi-label classification
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-5)
+
+    model.train()
+    for epoch in range(EPOCHS):
+        total_loss = 0
+        for batch in train_dataloader:
+            optimizer.zero_grad()
+            inputs = model.encode(batch['texts'][0], convert_to_tensor=True)
+            labels = batch['label']
+            outputs = model.head(inputs)  # Assuming a classification head exists
+            loss = train_loss(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            total_loss += loss.item()
+        print(f"Epoch {epoch + 1}/{EPOCHS}, Loss: {total_loss:.4f}")
 
     # save label map alongside model
     os.makedirs(OUT_DIR, exist_ok=True)

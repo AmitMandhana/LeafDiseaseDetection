@@ -1,6 +1,7 @@
 from sentence_transformers import SentenceTransformer, util
 import json, random
 import torch
+from sklearn.metrics import hamming_loss, precision_score, recall_score, f1_score
 
 # recreate the same dataset generation used in train_finetune.py
 def synthesize_queries(entry, n=6):
@@ -60,34 +61,49 @@ def build_dataset(json_path='disease_data.json'):
     return train, val, label_map, raw
 
 
-def evaluate_model(model_name, model, val_set, corpus, topk=(1,3)):
+def evaluate_model(model_name, model, val_set, corpus):
     corpus_embeddings = model.encode([c['description'] for c in corpus], convert_to_tensor=True)
-    results = {k:0 for k in topk}
-    for text, label in val_set:
+    y_true = []
+    y_pred = []
+
+    for text, true_labels in val_set:
         q_emb = model.encode(text, convert_to_tensor=True)
         scores = util.pytorch_cos_sim(q_emb, corpus_embeddings)[0]
-        for k in topk:
-            topk_idx = torch.topk(scores, k=k).indices
-            found = False
-            for idx in topk_idx:
-                # check if the corpus entry's label matches
-                entry_label = None
-                name = corpus[int(idx.item())]['name']
-                # map name back to label id: we'll compute label_map outside
-                # so this function expects corpus entries to carry label_id
-            # we'll handle after loop
-    # We'll implement differently below (corpus includes label_id)
+        predicted_labels = [0] * len(corpus)
+
+        # Threshold-based multi-label prediction
+        threshold = 0.5
+        for idx, score in enumerate(scores):
+            if score >= threshold:
+                predicted_labels[idx] = 1
+
+        y_true.append(true_labels)
+        y_pred.append(predicted_labels)
+
+    # Calculate multi-label metrics
+    hamming = hamming_loss(y_true, y_pred)
+    precision = precision_score(y_true, y_pred, average='samples')
+    recall = recall_score(y_true, y_pred, average='samples')
+    f1 = f1_score(y_true, y_pred, average='samples')
+
+    print(f"\nEvaluation for {model_name}:")
+    print(f"Hamming Loss: {hamming:.4f}")
+    print(f"Precision: {precision:.4f}")
+    print(f"Recall: {recall:.4f}")
+    print(f"F1-Score: {f1:.4f}")
 
 
 if __name__ == '__main__':
     train, val, label_map, raw = build_dataset()
-    # build corpus with label ids
     corpus = []
     for entry in raw:
         name = entry.get('disease_name') or entry.get('name') or 'Unknown'
         desc = entry.get('description') or ' '.join([entry.get(k, '') for k in ('leaf_symptoms','disease_conditions','fruit_effects')])
+        label_vector = [0] * len(label_map)
         label_id = label_map.get(name)
-        corpus.append({'name': name, 'description': desc, 'label_id': label_id})
+        if label_id is not None:
+            label_vector[label_id] = 1
+        corpus.append({'name': name, 'description': desc, 'label_vector': label_vector})
 
     models = []
     try:
@@ -106,25 +122,5 @@ if __name__ == '__main__':
     except Exception as e:
         print('finetuned model not loadable:', e)
 
-    topk_vals = (1,3)
     for model_name, model in models:
-        print('\nEvaluating', model_name)
-        corpus_embeddings = model.encode([c['description'] for c in corpus], convert_to_tensor=True)
-        counts = {k:0 for k in topk_vals}
-        for text, true_label in val:
-            q_emb = model.encode(text, convert_to_tensor=True)
-            scores = util.pytorch_cos_sim(q_emb, corpus_embeddings)[0]
-            for k in topk_vals:
-                topk_idx = torch.topk(scores, k=k).indices
-                found = False
-                for idx in topk_idx:
-                    idx = int(idx.item())
-                    if corpus[idx]['label_id'] == true_label:
-                        found = True
-                        break
-                if found:
-                    counts[k] += 1
-        total = len(val)
-        for k in topk_vals:
-            acc = counts[k] / total
-            print(f' top-{k} accuracy: {acc:.3f} ({counts[k]}/{total})')
+        evaluate_model(model_name, model, val, corpus)

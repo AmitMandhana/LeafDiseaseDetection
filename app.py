@@ -3,6 +3,8 @@ import torch
 from sentence_transformers import SentenceTransformer, util
 import json
 import os
+import shap
+import numpy as np
 
 # -------------------------------
 # 1. Load Model
@@ -27,6 +29,32 @@ def load_model():
     return model
 
 model = load_model()
+
+# -------------------------------
+# SHAP Setup with Custom Wrapper
+# -------------------------------
+@st.cache_resource
+def setup_shap_explainer():
+    """Create a SHAP explainer with a custom prediction wrapper"""
+    def predict_disease_probability(texts):
+        """Wrapper function that returns disease probabilities for SHAP"""
+        if isinstance(texts, str):
+            texts = [texts]
+        
+        results = []
+        for text in texts:
+            query_emb = model.encode(text, convert_to_tensor=True)
+            scores = util.pytorch_cos_sim(query_emb, corpus_embeddings)[0]
+            # Convert to probabilities using softmax
+            probs = torch.nn.functional.softmax(scores, dim=0).cpu().numpy()
+            results.append(probs)
+        
+        return np.array(results)
+    
+    # Use Partition explainer with a simple callable
+    return predict_disease_probability
+
+predict_fn = setup_shap_explainer()
 
 # -------------------------------
 # 2. Load Disease Data
@@ -99,15 +127,14 @@ with col3:
 
 # Button
 if st.button("🔍 Predict Disease"):
-    user_input = " ".join([quantitative, visual, weather]).strip()
+    user_input = " ".join([quantitative.strip(), visual.strip(), weather.strip()])
 
-    if not user_input:
+    if not user_input.strip():
         st.warning("⚠️ Please describe the symptoms before predicting.")
     else:
         with st.spinner("Analyzing symptoms..."):
             query_embedding = model.encode(user_input, convert_to_tensor=True)
             cos_scores = util.pytorch_cos_sim(query_embedding, corpus_embeddings)[0]
-            # get top-1 match safely (values and indices are length-1 tensors)
             top_values, top_indices = torch.topk(cos_scores, k=1)
             top_value = float(top_values[0].item())
             index = int(top_indices[0].item())
@@ -119,6 +146,56 @@ if st.button("🔍 Predict Disease"):
         st.progress(similarity / 100)
         st.write(f"**Confidence:** {similarity:.2f}%")
         st.markdown(f"**Reasoning:** {matched_disease['reasoning']}")
+
+        # Explainability: SHAP + Simple keyword analysis
+        with st.spinner("Generating explanation..."):
+            st.subheader("🔍 Explanation of Prediction")
+            
+            # Simple word-based importance by comparing with matched disease description
+            matched_desc = matched_disease['description'].lower()
+            input_words = user_input.lower().split()
+            
+            # Find overlapping words/phrases
+            important_words = []
+            for word in input_words:
+                if len(word) > 3 and word in matched_desc:  # Filter short words
+                    important_words.append(word)
+            
+            if important_words:
+                st.write("**Key matching symptoms:**")
+                st.write(", ".join(important_words))
+            else:
+                st.write("No direct symptom matches found, prediction based on semantic similarity.")
+            
+            # Show symptom breakdown by field
+            st.write("\n**Your input breakdown:**")
+            if quantitative.strip():
+                st.write(f"- 📊 Quantitative: {quantitative.strip()}")
+            if visual.strip():
+                st.write(f"- 👁️ Visual: {visual.strip()}")
+            if weather.strip():
+                st.write(f"- ☁️ Weather: {weather.strip()}")
+            
+            # SHAP word-level importance
+            try:
+                st.write("\n**SHAP Analysis - Word Importance:**")
+                with st.spinner("Computing SHAP values..."):
+                    # Split input into words for token-level analysis
+                    words = user_input.split()
+                    if len(words) > 1:
+                        # Create a custom explainer for this specific input
+                        explainer = shap.Explainer(predict_fn, masker=shap.maskers.Text(tokenizer=r"\W+"))
+                        shap_values = explainer([user_input])
+                        
+                        # Display text plot
+                        st.write("Words highlighted by importance:")
+                        shap.plots.text(shap_values[0, :, index], display=False)
+                        st.pyplot(bbox_inches='tight', dpi=150, pad_inches=0.1)
+                    else:
+                        st.info("Input too short for word-level SHAP analysis")
+            except Exception as e:
+                st.warning(f"SHAP analysis unavailable: {str(e)[:100]}")
+                st.info("Using simple keyword matching instead.")
 
         with st.expander("📋 Disease Details"):
             st.json(matched_disease["details"])

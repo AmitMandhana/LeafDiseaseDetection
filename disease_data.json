@@ -1,0 +1,344 @@
+[
+    {
+        "disease_name": "Apple Scab (Venturia inaequalis)",
+        "leaf_symptoms": "Olive-green initially, becomes dark brown to black with velvety appearance. 2-15 millimeters in diameter, can exceed 10 millimeters on young leaves. Circular to irregular with indefinite, feathery margins initially. Velvety surface with raised, scabby appearance. Small spots on underside of young leaves, both surfaces of older leaves. Individual lesions merge to cover most of leaf surface.",
+        "leaf_effects": "Leaves become twisted, distorted, and stunted. Premature yellowing and early leaf drop occurs. Affected tissues become puckered, cracked, and torn. Photosynthetic capacity reduced in affected areas.",
+        "plant_growth_effects": "Shoot growth becomes stunted due to reduced photosynthesis. Two to three consecutive defoliation events weaken trees. Greater susceptibility to freeze damage and other diseases. Reduced flower bud formation for following season.",
+        "fruit_effects": "Early fruit infections cause distortion as healthy tissue continues growing. Dark, roughly circular spots with dry, corky centers on mature fruit. Severely infected fruits drop prematurely from trees. Lesions may continue developing in storage.",
+        "disease_conditions": "Optimal infection at 16-24°C (61-75°F). 6-40 hours continuous leaf wetness depending on temperature. Primary infections in early spring, secondary cycles every 10-17 days. Cool, moist conditions with relative humidity >95%.",
+        "yield_impact": "Fruit production decreases by up to 70% in susceptible cultivars. Infected pedicels cause fruit drop, reducing yields. Weakened trees produce reduced crops in following years."
+    },
+    {
+        "disease_name": "Apple Black Rot (Botryosphaeria obtusa)",
+        "leaf_symptoms": "Initial tiny purple spots, become circular dark brown lesions with purple margins. 6 millimeters (quarter inch) in diameter. Circular to irregularly lobed spots with concentric rings. Light brown-to-gray center with distinct concentric patterns. Appear 1-3 weeks after petal fall on mature leaves. Purple specks enlarge to frogeye appearance.",
+        "leaf_effects": "Leaves become chlorotic (yellowing) around lesions. Severe infections cause complete defoliation. Black pycnidia (fruiting bodies) form on upper leaf surface. Reduced photosynthetic area leads to weakened growth.",
+        "plant_growth_effects": "Reddish-brown cankers form on bark and branches. Cankers enlarge to 45 centimeters (18 inches) long. Bark becomes cracked, sunken, and dead. Limb dieback occurs in severe cases.",
+        "fruit_effects": "Light brown spots start at calyx end of fruit. Spots develop brown and black concentric rings. Infected fruit becomes firm, leathery, black mummy. Black pycnidia appear on rotted fruit surface.",
+        "disease_conditions": "Optimal infection at 26.6°C (80°F). 4.5 hours leaf wetness required for infection. Peak infection period May to September. Warm temperatures with high rainfall favor development.",
+        "yield_impact": "Annual crop losses exceed 5% in affected orchards. Fruit rot develops during maturation prior to harvest. Mummified fruits increase future infection potential."
+    },
+    {
+        "disease_name": "Cedar Apple Rust (Gymnosporangium juniperi-virginianae)",
+        "leaf_symptoms": "Bright yellow-orange spots on upper leaf surface, brown spots underneath. 2-10 millimeters diameter, can reach 15 millimeters. Circular yellow spots with distinct margins. Raised, slightly thickened areas on leaf surface. Initially on upper leaf surface, corresponding brown areas below. Spots develop tube-like projections (aecia) on underside.",
+        "leaf_effects": "Leaves develop chlorotic areas around infection sites. Premature defoliation occurs in severe infections. Photosynthetic capacity reduced in affected areas. Leaves become distorted around infection sites.",
+        "plant_growth_effects": "Young shoots may become infected and distorted. Repeated defoliation weakens tree vigor. Flower bud formation may be reduced. Tree becomes more susceptible to other stresses.",
+        "fruit_effects": "Infected fruits become misshapen and unmarketable. Orange aecial tubes may form on fruit surface. Fruit quality significantly reduced. Infected fruits often drop prematurely.",
+        "disease_conditions": "Optimal infection at 18-24°C (64-75°F). Requires wet conditions for 4-6 hours. Spring infections during wet weather periods. Cool, wet spring weather favors infection.",
+        "yield_impact": "Fruit production can decrease by 30-50%. Quality losses make fruit unmarketable. Repeated infections reduce tree productivity."
+    },
+    {
+        "disease_name": "Apple Healthy",
+        "leaf_symptoms": "Uniform dark green color throughout growing season. Normal leaf size 7-12 centimeters in length. Typical apple leaf shape with serrated edges. Smooth, waxy surface with no lesions or spots. Evenly distributed throughout canopy. Maintains color and structure through season.",
+        "leaf_effects": "No yellowing, browning, or premature drop. Full photosynthetic capacity maintained. No distortion, curling, or abnormal growth. Natural seasonal color change only.",
+        "plant_growth_effects": "Normal annual shoot growth of 20-40 centimeters. Regular flower bud formation. Balanced vegetative and reproductive growth. Good cold hardiness maintained.",
+        "fruit_effects": "Fruits develop normal size, color, and shape. No spots, lesions, or deformities on fruit surface. Normal fruit set and development. Proper fruit maturation and harvest quality.",
+        "disease_conditions": "Tolerates normal seasonal temperature ranges. Responds well to adequate but not excessive moisture. Maintains health throughout growing season. Adapts to typical climate variations.",
+        "yield_impact": "Normal fruit production for variety and tree age. Consistent annual bearing. High fruit quality and marketability."
+    },
+    {
+        "disease_name": "Blueberry Healthy",
+        "leaf_symptoms": "Bright green during growing season, red-orange in autumn. Leaves 1-8 centimeters long, oval-shaped. Simple, alternate leaves with smooth or serrated margins. Smooth surface with waxy coating. Evenly distributed on branches throughout canopy. Maintain healthy color spring through fall.",
+        "leaf_effects": "No discoloration, spots, or abnormal patterns. Full photosynthetic capacity maintained throughout season. Natural seasonal color changes only. No premature leaf drop or wilting.",
+        "plant_growth_effects": "Normal shrub height 10 centimeters to 4 meters depending on variety. Healthy annual shoot growth 15-30 centimeters. Regular flower and fruit production cycles. Good cold hardiness for northern climates.",
+        "fruit_effects": "Berries develop normal blue-purple color. Fruit size 5-16 millimeters in diameter. Sweet taste with proper sugar content. No fruit deformities or premature drop.",
+        "disease_conditions": "Thrives in cool climates, hardy to -30°C (-22°F). Requires consistent moisture but well-drained soil. Active growth April through October. Tolerates normal seasonal weather variations.",
+        "yield_impact": "Consistent annual berry production. High-quality fruit suitable for fresh market. Normal fruit set and development."
+    },
+    {
+        "disease_name": "Cherry Powdery Mildew (Podosphaera clandestina)",
+        "leaf_symptoms": "White powdery fungal growth on leaf surfaces. Affected areas can cover entire leaf surface. Circular white patches that expand and merge. Powdery, flour-like coating on leaves. Initially on young expanding leaves, spreads throughout canopy. White growth becomes denser, leaves may curl upward.",
+        "leaf_effects": "Leaves curl upward and become distorted. Premature yellowing and leaf drop occurs. Reduced photosynthetic capacity under white fungal growth. Leaves become stunted and malformed.",
+        "plant_growth_effects": "Young shoots become infected and distorted. Reduced vigor due to decreased photosynthesis. Flower buds may be infected. Tree becomes more susceptible to environmental stress.",
+        "fruit_effects": "White powdery growth appears on fruit surface. Infected fruits become russeted and unmarketable. Fruit quality significantly reduced. Premature fruit drop may occur.",
+        "disease_conditions": "Optimal development at 21-27°C (70-80°F). High humidity favors disease, no free water needed. Active spring through fall, peak in warm months. Warm temperatures with morning dew ideal.",
+        "yield_impact": "Fruit quality losses can reach 50% in susceptible varieties. Reduced fruit size and marketability. Tree vigor decline affects future production."
+    },
+    {
+        "disease_name": "Cherry Healthy",
+        "leaf_symptoms": "Dark green throughout growing season. Normal leaf size 5-12 centimeters long. Ovate with serrated margins, typical cherry leaf form. Smooth, glossy surface with no abnormalities. Uniform distribution throughout canopy. Maintains healthy appearance spring through fall.",
+        "leaf_effects": "No disease symptoms, spots, or discoloration. Full photosynthetic function maintained. Natural seasonal color changes only. No premature defoliation.",
+        "plant_growth_effects": "Normal annual shoot growth 25-50 centimeters. Regular flowering and fruit set. Balanced tree structure and vigor. Good cold hardiness maintained.",
+        "fruit_effects": "Fruits develop normal size, color, and flavor. No deformities or surface abnormalities. Proper fruit maturation timing. High-quality marketable fruit.",
+        "disease_conditions": "Tolerates normal seasonal temperature ranges. Responds well to adequate irrigation. Maintains health throughout growing season. Adapts to typical climate conditions.",
+        "yield_impact": "Consistent annual fruit production. High-quality cherry harvest. Normal yield for variety and tree age."
+    },
+    {
+        "disease_name": "Corn Cercospora Leaf Spot (Cercospora zeae-maydis)",
+        "leaf_symptoms": "Long, narrow, light tan lesions that turn gray. Lesions up to 5 centimeters (2 inches) long. Rectangular lesions delimited by leaf veins. Dry, papery appearance when mature. First appear on lower leaves, progress upward. Lesions expand and merge, can kill entire leaves.",
+        "leaf_effects": "Reduced photosynthetic area as lesions expand. Premature senescence of affected leaves. Leaves may die when lesions coalesce. Decreased plant vigor from leaf loss.",
+        "plant_growth_effects": "Reduced plant height and biomass. Weakened stalks from decreased photosynthesis. Delayed maturity in severe infections. Increased lodging susceptibility.",
+        "fruit_effects": "Reduced kernel fill and grain quality. Lighter test weight in harvested grain. Decreased overall grain yield. Poor grain development in severe cases.",
+        "disease_conditions": "Optimal development at 27°C (80°F). Requires >90% humidity for 12+ hours. Symptoms appear 2-3 weeks before tasseling. Warm, humid conditions favor disease.",
+        "yield_impact": "Yield losses can exceed 60% in susceptible hybrids. Quality reduction affects grain marketability. Economic losses significant in epidemic years."
+    },
+    {
+        "disease_name": "Corn Common Rust (Puccinia sorghi)",
+        "leaf_symptoms": "Small, oval, cinnamon-brown to orange pustules. Pustules 1-3 millimeters long. Oval to elongated raised bumps on leaf surface. Raised pustules that rupture to release orange spores. Scattered randomly on both leaf surfaces. Pustules increase in number, leaves may yellow.",
+        "leaf_effects": "Chlorosis develops around pustules. Premature leaf senescence in severe infections. Reduced photosynthetic capacity. Leaves may become completely yellow and die.",
+        "plant_growth_effects": "Reduced plant vigor and height. Weakened stalks from decreased photosynthesis. Delayed kernel fill and maturity. Increased susceptibility to stalk rots.",
+        "fruit_effects": "Reduced grain fill and kernel weight. Lighter test weight of harvested grain. Decreased overall yield. Poor kernel development in severe cases.",
+        "disease_conditions": "Optimal at 16-23°C (60-73°F). Requires 3-6 hours leaf wetness. Can occur throughout growing season. Cool, moist conditions favor development.",
+        "yield_impact": "Yield losses typically 5-20%. Severe epidemics can cause 50% yield loss. Quality reduction affects grain value."
+    },
+    {
+        "disease_name": "Corn Northern Leaf Blight (Exserohilum turcicum)",
+        "leaf_symptoms": "Gray-green lesions that turn tan colored with dark sporulation areas. Cigar-shaped lesions 2.5-15 centimeters (1-6 inches) long. Elliptical to cigar-shaped, canoe-like lesions. Sooty appearance during humid weather due to spore formation. Begin on lower leaves, progress upward through canopy. Lesions expand and coalesce to form large necrotic areas.",
+        "leaf_effects": "Reduced photosynthetic area as lesions expand. Premature senescence of affected leaves. Severe infections cause leaves to appear frost-killed. Complete leaf destruction in susceptible hybrids.",
+        "plant_growth_effects": "Reduced plant height and overall vigor. Weakened stalks due to decreased photosynthesis. Increased lodging susceptibility. Delayed kernel fill and maturity.",
+        "fruit_effects": "Reduced grain fill and kernel weight. Lighter test weight of harvested grain. Decreased overall grain yield. Poor kernel development when infection occurs before silking.",
+        "disease_conditions": "Optimal development at 18-27°C (64-80°F). Requires prolonged periods of leaf wetness. Most severe when infection occurs before silking. Moderate temperatures with high humidity favor disease.",
+        "yield_impact": "Yield losses up to 30-50% when infection occurs before silking. Severe epidemics can cause complete crop loss. Highest economic losses in susceptible hybrids."
+    },
+    {
+        "disease_name": "Corn Healthy",
+        "leaf_symptoms": "Dark green throughout growing season. Normal leaf size 60-100 centimeters long, 5-10 centimeters wide. Linear, lance-shaped with parallel venation. Smooth surface with waxy coating. Evenly distributed along stalk. Maintains healthy green color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural senescence only during grain fill. No premature yellowing or leaf death.",
+        "plant_growth_effects": "Normal height 1.5-3 meters depending on variety. Straight, sturdy stalks with good standability. Regular node and internode development. Proper tassel and silk development.",
+        "fruit_effects": "Normal ear development and kernel fill. Kernels develop proper size, color, and weight. Good test weight and grain quality. Complete ear fill from tip to butt.",
+        "disease_conditions": "Tolerates normal growing season temperatures. Responds well to adequate soil moisture. Maintains health throughout growing season. Adapts to typical climate conditions.",
+        "yield_impact": "Normal yield potential for hybrid and environment. High grain quality and marketability. Consistent performance across seasons."
+    },
+    {
+        "disease_name": "Grape Black Rot (Guignardia bidwellii)",
+        "leaf_symptoms": "Light brown necrotic circles with narrow dark brown borders. Circular lesions 5-15 millimeters in diameter. Round to slightly irregular lesions. Necrotic centers with raised black pycnidia. Scattered across leaf surface, more common on older leaves. Lesions expand and develop black fruiting bodies.",
+        "leaf_effects": "Reduced photosynthetic area from necrotic lesions. Premature defoliation in severe infections. Black pycnidia produce spores for secondary infection. Weakened vine vigor from repeated defoliation.",
+        "plant_growth_effects": "Shoot lesions are elongate with pycnidia in centers. Tendrils and petioles develop similar elongate lesions. Reduced vine vigor and growth. Increased susceptibility to winter injury.",
+        "fruit_effects": "Berries develop light brown spots that expand. Infected berries turn blue-black and shrivel into mummies. Complete crop loss possible in severe infections. Mummified berries remain attached and spread infection.",
+        "disease_conditions": "Optimal development at 27°C (80°F) with high humidity. Requires free water for spore release and infection. Primary infections occur during wet spring weather. Hot, humid conditions favor disease development.",
+        "yield_impact": "Complete crop loss possible in warm, humid climates. Quality losses from infected and mummified berries. Economic losses significant in epidemic years."
+    },
+    {
+        "disease_name": "Grape Esca (Complex fungal disease)",
+        "leaf_symptoms": "Yellow or red discoloration on white varieties, yellow on red varieties. Variable-sized areas of discoloration across leaf blade. Irregular interveinal striping patterns. Necrotic lesions forming tiger-stripe appearance. Symptoms appear throughout canopy on mature vines. Discolored areas expand, leaves may completely dry.",
+        "leaf_effects": "Leaves develop characteristic tiger-stripe patterns. Complete wilting and drying can occur suddenly. Reduced photosynthetic capacity from necrotic areas. Premature leaf drop in severe cases.",
+        "plant_growth_effects": "White rot (amadou) develops in trunk wood. Brown sectoral lesions appear in wood cross-sections. Vascular streaks visible in affected shoots. Sudden vine death (apoplectic form) can occur.",
+        "fruit_effects": "Berries show delayed maturity. 10% reduction in sugar content. Increased acidity in affected fruit. Berry shrinkage and wilting may occur.",
+        "disease_conditions": "Symptoms worsen during hot summer periods. Rainy periods followed by heat trigger symptoms. Symptoms typically appear on mature vines (8+ years). Stress conditions exacerbate symptom expression.",
+        "yield_impact": "Significant quality losses from delayed maturity. Reduced sugar content affects wine quality. Sudden vine death causes complete loss."
+    },
+    {
+        "disease_name": "Grape Leaf Blight (Pseudocercospora vitis)",
+        "leaf_symptoms": "Large irregular-shaped spots, initially dull red to brown, turn black with age. Variable sized lesions, generally 5-20 millimeters across. Irregular, angular to somewhat rounded spots. Spots turn black and brittle with age. Scattered angular purple-brown spots on upper leaf surface. Less conspicuous brown spots develop on lower leaf surface.",
+        "leaf_effects": "Reduced photosynthetic area from necrotic lesions. Premature defoliation in severe infections. Leaves become brittle and fragile where infected. Golden appearance of infected leaves distinguishes from healthy tissue.",
+        "plant_growth_effects": "Minor disease that affects poorly managed vineyards. Most common late in the growing season. Reduced vine vigor from repeated defoliation. Potential threat to grape production in susceptible areas.",
+        "fruit_effects": "Generally limited direct effect on fruit quality. May reduce vine capacity to support fruit development. Secondary effects from reduced leaf area.",
+        "disease_conditions": "Favors warm growing conditions. High humidity promotes disease development. Most severe late in growing season. Poor spray coverage increases disease severity.",
+        "yield_impact": "Minor economic impact in well-managed vineyards. Quality losses from reduced vine vigor. Potential serious threat if disease spreads."
+    },
+    {
+        "disease_name": "Grape Healthy",
+        "leaf_symptoms": "Dark green throughout growing season, yellow-red autumn colors. Normal leaf size 7-20 centimeters across. Typical palmate shape with 3-5 lobes. Smooth surface with no lesions or spots. Evenly distributed throughout canopy. Maintains healthy color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural seasonal color changes only. No premature leaf drop or wilting.",
+        "plant_growth_effects": "Normal annual cane growth 1-3 meters. Regular flower cluster formation. Balanced vegetative and reproductive growth. Good cold hardiness for variety.",
+        "fruit_effects": "Clusters develop normal size and berry count. Berries achieve proper sugar and acid balance. Normal color development at maturity. High fruit quality suitable for intended use.",
+        "disease_conditions": "Tolerates normal growing season temperatures. Responds well to adequate but not excessive water. Maintains health throughout growing season. Adapts to typical viticultural climate conditions.",
+        "yield_impact": "Consistent annual production. High-quality fruit for wine or table use. Normal yield for variety and site conditions."
+    },
+    {
+        "disease_name": "Orange Huanglongbing (Candidatus Liberibacter asiaticus)",
+        "leaf_symptoms": "Asymmetrical blotchy yellow mottling, not following vein patterns. Variable-sized chlorotic areas across leaf blade. Irregular asymmetric yellowing around leaf veins. Leaf thickening and leathery appearance may develop. Symptoms throughout canopy on mature trees. Yellowing spreads, leaves may become completely chlorotic.",
+        "leaf_effects": "Asymmetrical yellowing distinguishes from nutrient deficiency. Premature defoliation occurs as disease progresses. Reduced photosynthetic capacity from chlorotic areas. Leaves may show vein corking or thickening.",
+        "plant_growth_effects": "Tree decline with stunted growth and dieback. Multiple off-season flowering flushes. Root system decay, especially feeder roots. Overall tree vigor declines progressively.",
+        "fruit_effects": "Fruits remain green at stylar end (shoulder). Small, irregularly shaped, lopsided fruit. Bitter taste and aborted seeds. Premature fruit drop increases over time.",
+        "disease_conditions": "Heat-tolerant Asian form spreads in warm climates. No specific moisture requirements. Symptoms appear 6 months to several years after infection. Vector activity increases in warm weather.",
+        "yield_impact": "Most trees die within 3-5 years of infection. Fruit becomes unsuitable for fresh market, juice only. Complete crop loss as trees decline and die."
+    },
+    {
+        "disease_name": "Peach Bacterial Spot (Xanthomonas arboricola pv. pruni)",
+        "leaf_symptoms": "Small water-soaked grayish areas become angular purple, black, or brown. Spots typically 2-5 millimeters in diameter. Angular lesions delimited by leaf veins. Water-soaked appearance initially, become necrotic. May be surrounded by faint yellow halo. Lesions coalesce causing blighted appearance.",
+        "leaf_effects": "General yellowing occurs on leaves with multiple lesions. Leaves drop prematurely, exposing fruit to sun. Reduced photosynthetic capacity from shot holes. Early leaf drop weakens tree vigor.",
+        "plant_growth_effects": "Young shoots develop dark, sunken cankers. Twig dieback occurs in severe infections. Tree vigor declines from repeated defoliation. Increased susceptibility to winter injury.",
+        "fruit_effects": "Small, dark, sunken spots on fruit surface. Fruit cracking around infection sites. Reduced fruit quality and marketability. Blemishes provide entry points for other pathogens.",
+        "disease_conditions": "Optimal development at 24-28°C (75-82°F). Favored by high precipitation and humidity. Most severe during warm, wet spring weather. Wind-driven rain spreads bacteria effectively.",
+        "yield_impact": "Yield losses up to 50% in susceptible cultivars. Quality losses from fruit lesions and cracking. Economic losses significant in epidemic years."
+    },
+    {
+        "disease_name": "Peach Healthy",
+        "leaf_symptoms": "Glossy green, lance-shaped leaves throughout growing season. Normal leaf size 7-15 centimeters long, 2-4 centimeters wide. Lance-shaped and long-pointed with serrated margins. Smooth, glossy surface with no abnormalities. Alternate arrangement along branches. Maintains healthy color until natural autumn drop.",
+        "leaf_effects": "No disease symptoms, spots, or discoloration. Full photosynthetic capacity maintained. Natural seasonal color changes only. No premature defoliation.",
+        "plant_growth_effects": "Normal annual shoot growth 20-60 centimeters. Regular flowering in early spring. Balanced vegetative and reproductive growth. Good cold hardiness for temperate climates.",
+        "fruit_effects": "Fruits develop normal size, color, and fuzzy skin. Sweet white or yellow flesh with normal sugar content. Proper fruit development and maturation timing. High-quality marketable fruit.",
+        "disease_conditions": "Tolerates normal temperate climate ranges. Requires well-drained soil with adequate moisture. Maintains health throughout growing season. Adapts to typical fruit-growing climate conditions.",
+        "yield_impact": "Consistent annual fruit production. High-quality peaches suitable for fresh market. Normal yield for variety and tree age."
+    },
+    {
+        "disease_name": "Pepper Bacterial Spot (Xanthomonas spp.)",
+        "leaf_symptoms": "Small yellow-green lesions on young leaves, angular dark-green spots on older leaves. Lesions typically 1-5 millimeters in diameter. Angular lesions delimited by leaf veins, often surrounded by yellow halos. Greasy, water-soaked appearance initially. More numerous on leaf margins and tips. Centers dry and disintegrate creating shot-hole appearance.",
+        "leaf_effects": "Young leaves appear deformed and twisted. Severe infections cause extensive defoliation. Reduced photosynthetic capacity from shot holes. Leaves become yellow around infection sites.",
+        "plant_growth_effects": "Stem lesions may develop in severe cases. Plant vigor declines from repeated defoliation. Increased susceptibility to environmental stress. Stunted growth in severe infections.",
+        "fruit_effects": "Pale-green, water-soaked spots up to 5 millimeters on fruit. Fruit surface becomes rough, brown, and scabbed. Reduced fruit quality and marketability. Premature fruit drop may occur.",
+        "disease_conditions": "Optimal development at 25-30°C (77-86°F). Requires free water for infection, spread by rain. Most severe during warm, humid periods. Hot, humid environments favor disease development.",
+        "yield_impact": "Can cause total crop loss in severe epidemics. Significant economic losses in warm, humid climates. Quality losses from fruit lesions and defoliation."
+    },
+    {
+        "disease_name": "Pepper Healthy",
+        "leaf_symptoms": "Dark green throughout growing season. Normal leaf size 5-12 centimeters long, 3-8 centimeters wide. Oval to lance-shaped with smooth margins. Smooth, waxy surface with no lesions. Alternate arrangement on stems and branches. Maintains healthy color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. No premature yellowing or leaf drop. Natural seasonal changes only.",
+        "plant_growth_effects": "Normal plant height 30-150 centimeters depending on variety. Strong, upright stems with good support. Regular flowering and fruit set. Balanced vegetative and reproductive growth.",
+        "fruit_effects": "Peppers develop normal size, shape, and color. Thick walls with proper flesh development. Good flavor and nutritional content. High-quality marketable fruit.",
+        "disease_conditions": "Thrives in warm temperatures 18-30°C (65-85°F). Requires consistent moisture but well-drained soil. Maintains health throughout growing season. Adapts to typical warm-season growing conditions.",
+        "yield_impact": "Consistent fruit production throughout season. High-quality peppers suitable for fresh market. Normal yield for variety and growing conditions."
+    },
+    {
+        "disease_name": "Potato Early Blight (Alternaria solani)",
+        "leaf_symptoms": "Dark brown to black spots with distinctive concentric rings (bullseye pattern). Lesions typically 5-15 millimeters in diameter. Circular to oval with target-like concentric patterns. Dry, papery appearance when mature. First appear on older, lower leaves. Lesions expand, merge, and cause yellowing around spots.",
+        "leaf_effects": "Leaves turn yellow and die around infection sites. Premature defoliation occurs as disease progresses. Reduced photosynthetic capacity from necrotic areas. Complete leaf death in severe infections.",
+        "plant_growth_effects": "Weakened plant vigor from reduced leaf area. Stunted growth due to decreased photosynthesis. Increased susceptibility to other stresses. Reduced tuber development in severe cases.",
+        "fruit_effects": "Dark, sunken lesions develop on tuber surface. Tuber lesions may be shallow or deep. Affected tubers have reduced storage quality. Secondary bacterial infections may occur through wounds.",
+        "disease_conditions": "Optimal development at 24-29°C (75-84°F). High humidity and prolonged leaf wetness favor disease. Most severe during warm, humid periods. Alternating wet and dry conditions promote spore release.",
+        "yield_impact": "Yield losses can exceed 20% in favorable conditions. Quality losses from tuber lesions affect marketability. Severe epidemics can cause 50% yield reduction."
+    },
+    {
+        "disease_name": "Potato Late Blight (Phytophthora infestans)",
+        "leaf_symptoms": "Water-soaked dark green spots that turn brown to black. Small circular spots initially, rapidly expanding to large irregular lesions. Irregular water-soaked lesions with no distinct margins. White fuzzy growth (sporangia) on undersides during humid conditions. Begin on lower leaves, rapidly spread throughout canopy. Lesions coalesce, entire leaves turn black and die within days.",
+        "leaf_effects": "Rapid leaf death occurs within 2-4 days of infection. Complete defoliation can occur in favorable conditions. White sporulation visible on leaf undersides in humid weather. Distinctive musty odor from infected tissues.",
+        "plant_growth_effects": "Rapid plant death can occur in epidemic conditions. Brown to black streaks appear on stems and petioles. Complete plant collapse within 7-10 days in severe cases. Stunted growth from early season infections.",
+        "fruit_effects": "Tubers develop dark brown, firm, dry rot lesions. Reddish-brown discoloration extends 5-15 millimeters deep. Secondary bacterial soft rot often follows. Affected tubers unsuitable for consumption or storage.",
+        "disease_conditions": "Optimal at 15-20°C (59-68°F) with high humidity. Requires 90%+ humidity and leaf wetness for infection. Most severe during cool, wet weather periods. Can destroy entire fields in 7-14 days under ideal conditions.",
+        "yield_impact": "Can cause complete crop loss in favorable conditions. Economic losses up to 10 billion USD globally per year. Most devastating disease of global potato production."
+    },
+    {
+        "disease_name": "Potato Healthy",
+        "leaf_symptoms": "Dark green compound leaves throughout growing season. Normal leaflet size 3-7 centimeters long. Compound leaves with 7-9 leaflets per leaf. Smooth surface with no lesions or abnormalities. Evenly distributed along stems. Maintains healthy color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural senescence only at end of season. No premature yellowing or leaf death.",
+        "plant_growth_effects": "Normal plant height 60-100 centimeters. Strong, upright stems with good structure. Regular flowering with white or purple flowers. Balanced vegetative and reproductive growth.",
+        "fruit_effects": "Tubers develop normal size, shape, and skin characteristics. Proper starch content and cooking quality. Good storage characteristics. High-quality marketable tubers.",
+        "disease_conditions": "Tolerates cool temperate growing conditions. Requires consistent soil moisture. Maintains health throughout growing season. Adapts to typical potato-growing climate.",
+        "yield_impact": "Normal yield for variety and growing conditions. High-quality tubers suitable for processing or fresh market. Consistent production across seasons."
+    },
+    {
+        "disease_name": "Raspberry Healthy",
+        "leaf_symptoms": "Green on top surface, silvery-white underneath. Compound leaves with 3-5 leaflets, each 5-10 centimeters. Serrated leaflets with pointed tips. Slightly hairy surface with no disease symptoms. Alternate arrangement on canes. Maintains healthy appearance throughout growing season.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural seasonal color changes only. No premature defoliation.",
+        "plant_growth_effects": "Canes grow 1-2 meters tall with thorny stems. Second-year canes produce fruit, then die naturally. New canes emerge annually from root system. Hardy plants survive in zones 3-9.",
+        "fruit_effects": "Berries develop normal red color and aggregate structure. High vitamin C content and antioxidant levels. Sweet-tart flavor with proper sugar-acid balance. Nutritious berries suitable for fresh consumption.",
+        "disease_conditions": "Extremely hardy, tolerates cold temperatures. Requires well-drained soil with consistent moisture. Maintains health throughout growing season. Adapts to temperate climate conditions.",
+        "yield_impact": "Consistent annual berry production. High-quality fruit rich in nutrients. Normal yield for variety and growing conditions."
+    },
+    {
+        "disease_name": "Soybean Healthy",
+        "leaf_symptoms": "Dark green trifoliate leaves throughout season. Normal leaflet size 5-10 centimeters long. Three oval leaflets per leaf (trifoliate). Smooth surface with fine hairs, no lesions. Alternate arrangement on main stem and branches. Maintains healthy color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural yellowing only during pod fill. No premature defoliation.",
+        "plant_growth_effects": "Normal plant height 30-150 centimeters depending on variety. Strong taproot system with nitrogen-fixing nodules. Regular flowering with small white or purple flowers. Balanced vegetative and reproductive growth.",
+        "fruit_effects": "Pods develop normally with 1-4 beans per pod. Proper seed fill and protein content. Good seed quality for processing or planting. High oil and protein content.",
+        "disease_conditions": "Thrives in warm temperatures 20-30°C (68-86°F). Requires adequate soil moisture throughout season. Maintains health throughout growing season. Adapts to typical soybean-growing climate.",
+        "yield_impact": "Normal yield for variety and environment. High-quality beans suitable for processing. Consistent production across growing regions."
+    },
+    {
+        "disease_name": "Squash Powdery Mildew (Podosphaera xanthii)",
+        "leaf_symptoms": "Small circular yellow lesions become covered in white powdery spores. Individual lesions start small but can cover entire leaf surface. Circular lesions that expand and merge. Characteristic white powdery coating of spores. May appear on upper surface, undersides, or both. Entire leaf and petiole surface becomes covered in white spores.",
+        "leaf_effects": "Reduced plant growth from decreased photosynthesis. Premature defoliation occurs as disease progresses. Leaves become yellow and die under heavy spore coverage. Complete leaf loss in severe infections.",
+        "plant_growth_effects": "Stunted plant growth and reduced vigor. Powdery growth may appear on stems and fruit. Reduced flowering and fruit set. Overall plant decline from reduced leaf area.",
+        "fruit_effects": "White powdery growth may appear on fruit surface. Reduced fruit quality and marketability. Smaller fruit size due to reduced plant vigor. Premature fruit senescence.",
+        "disease_conditions": "Optimal development at 20-30°C (68-86°F). High humidity favors disease, no free water needed. Can occur throughout growing season. Warm, humid conditions ideal for spore production.",
+        "yield_impact": "Yield losses of 30-50% possible in severe infections. Quality losses from reduced plant vigor. Economic significance in greenhouse and field production."
+    },
+    {
+        "disease_name": "Strawberry Leaf Scorch (Diplocarpon earlianum)",
+        "leaf_symptoms": "Numerous small, purplish to brownish lesions on upper leaf surface. Lesions 1.5-5 millimeters (1/16 to 3/16 inch) in diameter. Small, irregular spots with undefined borders. Dry, scorched appearance as disease progresses. Mainly on upper surface of older leaves. Leaves turn brown and dry up, resembling burnt appearance.",
+        "leaf_effects": "Leaves develop characteristic scorched, burnt appearance. Premature browning and drying of foliage. Reduced photosynthetic capacity from necrotic areas. Weakened plants with reduced drought tolerance.",
+        "plant_growth_effects": "Purple, sunken lesions on petioles resembling streaks. Severe petiole lesions cause bowing and leaf death. Seriously weakened host plants. Reduced resistance to winter damage.",
+        "fruit_effects": "Unattractive blemishes develop on fruit surface. Dark, minuscule black spots (acervuli) appear on berries. Reduced fruit quality and marketability. Overall reduced berry production.",
+        "disease_conditions": "Favors spring conditions with moderate temperatures. Disease develops during wet spring weather. Most problematic during spring growing season. Overwinters in plant debris, infects during wet periods.",
+        "yield_impact": "Losses range from negligible to severe depending on conditions. Majority cause of strawberry disease problems. Significant fruit quality and yield reduction."
+    },
+    {
+        "disease_name": "Strawberry Healthy",
+        "leaf_symptoms": "Bright green trifoliate leaves throughout growing season. Normal leaflet size 3-8 centimeters long. Three leaflets per leaf with serrated edges. Smooth surface with no lesions or abnormalities. Evenly distributed on crowns and runners. Maintains healthy color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural seasonal color changes only. No premature defoliation.",
+        "plant_growth_effects": "Normal crown development with healthy runners. Regular flower cluster production. Strong root system development. Good cold hardiness for perennial production.",
+        "fruit_effects": "Berries develop normal red color and size. Sweet flavor with proper sugar-acid balance. High vitamin C and antioxidant content. Excellent fruit quality for fresh market.",
+        "disease_conditions": "Tolerates cool temperate growing conditions. Requires consistent moisture with good drainage. Maintains health throughout growing season. Adapts to typical strawberry-growing climate.",
+        "yield_impact": "Consistent annual berry production. High-quality fruit suitable for fresh consumption. Normal yield for variety and growing conditions."
+    },
+    {
+        "disease_name": "Tomato Bacterial Spot (Xanthomonas spp.)",
+        "leaf_symptoms": "Initially circular water-soaked lesions, become dark brown to black. Spots rarely exceed 3 millimeters in diameter. Circular lesions on leaves and stems. Water-soaked appearance initially, become necrotic. May be surrounded by faint yellow halo. Lesions coalesce causing blighted appearance.",
+        "leaf_effects": "General yellowing occurs on leaves with multiple lesions. Leaves drop prematurely, exposing fruit to sun. Reduced photosynthetic capacity from necrotic areas. Bacterial streaming visible under microscope from infected tissue.",
+        "plant_growth_effects": "Dark brown to black spots develop on stems. Plant vigor declines from defoliation. Increased susceptibility to sun scalding. Overall plant health deteriorates.",
+        "fruit_effects": "Small, slightly raised blisters on fruit surface. Lesions become dark brown, scab-like, and raised. Fruit quality significantly reduced. Blemishes provide entry points for other pathogens.",
+        "disease_conditions": "Optimal development at 24-30°C (75-86°F). Favored by high precipitation and humidity. Can occur throughout growing season. Wind-driven rain spreads bacteria effectively.",
+        "yield_impact": "Can cause total crop loss in severe epidemics. Significant yield loss from defoliation and fruit damage. Economic losses substantial in epidemic years."
+    },
+    {
+        "disease_name": "Tomato Early Blight (Alternaria solani)",
+        "leaf_symptoms": "Distinctive bullseye-patterned leaf spots, dark brown to black. Lesions can be as small as 3 millimeters, expanding to larger areas. Circular lesions with concentric rings (target pattern). Dry, papery appearance when mature. Usually occur on older, lower leaves first. Spots enlarge and coalesce, leaves yellow and die.",
+        "leaf_effects": "Starts at bottom of plant and progresses upward. Premature defoliation from leaf death. Reduced photosynthetic capacity. Leaves develop characteristic bullseye appearance.",
+        "plant_growth_effects": "Stem lesions develop in severe infections. Weakened plant vigor from defoliation. Reduced fruit development. Overall plant health declines.",
+        "fruit_effects": "Fruit rot develops on tomatoes. Dark, sunken lesions with concentric rings on fruit. Reduced fruit quality and storability. Secondary infections may occur.",
+        "disease_conditions": "Optimal at 24-29°C (75-84°F), range 15-35°C (59-95°F). Requires 90%+ relative humidity and free water. Most problematic during warm, humid weather. Wet weather or heavy dew favors disease spread.",
+        "yield_impact": "Can cause significant yield reductions if uncontrolled. Quality losses from fruit rot. Economic impact substantial in favorable conditions."
+    },
+    {
+        "disease_name": "Tomato Late Blight (Phytophthora infestans)",
+        "leaf_symptoms": "Irregularly shaped, water-soaked lesions with lighter halo, become brown. Large lesions that can encompass entire leaves rapidly. Irregular water-soaked lesions with no distinct margins. White cottony growth on underside of leaves during humidity. Typically on younger, more succulent leaves in upper canopy. Lesions enlarge rapidly, leaves brown, shrivel and die.",
+        "leaf_effects": "Complete infection can occur within few days under favorable conditions. Leaves appear burnt or frost-damaged. Rapid defoliation occurs. Plant looks like it was blasted by blowtorch.",
+        "plant_growth_effects": "Brown stem and petiole lesions develop. Infections move from outside of canopy inward. Complete plant death can occur rapidly. Overall plant health deteriorates quickly.",
+        "fruit_effects": "Firm greasy spots that become leathery and chocolate brown. Spots can enlarge to encompass entire fruit. Large rough, brown lesions appear on fruits. Fruit lesions typically soft and on top of tomato.",
+        "disease_conditions": "Optimal at 60-80°F (15-27°C), mycelia prefer 73°F (23°C). Requires 90-100% relative humidity for spore production. Favored by cool, wet weather conditions. Spores airborne, can travel great distances in storms.",
+        "yield_impact": "Can cause complete crop loss in favorable conditions. Devastating effects on tomato crops globally. One of most serious diseases affecting tomatoes."
+    },
+    {
+        "disease_name": "Tomato Leaf Mold (Passalora fulva)",
+        "leaf_symptoms": "Pale greenish-yellow spots on upper surface, olive-green to brown mold below. Spots usually less than 6 millimeters (1/4 inch) with no definite margins. Indefinite margins on upper surface chlorotic spots. Velvety mold forms on lower leaf surface below spots. Oldest leaves infected first. Spots grow together, turn brown, leaves wither but remain attached.",
+        "leaf_effects": "Infected leaves wither and die but often remain attached. Defoliation occurs in severe infections. Reduced photosynthetic capacity from yellowing. Complete leaf death in advanced cases.",
+        "plant_growth_effects": "Typically only issue in greenhouse and high-tunnel tomatoes. Indirectly affects yield through leaf loss. Overall plant vigor declines. Growth reduced from decreased leaf area.",
+        "fruit_effects": "Infected blossoms turn black and fall off. Fruit infections start as smooth black irregular area at stem end. Infected area becomes sunken, dry and leathery. Direct yield reduction in severe cases.",
+        "disease_conditions": "Wide temperature range for infection. Driven by high relative humidity (greater than 85%). Multiple generations can be completed within growing season. Severe epidemics occur at humidity 85% or above.",
+        "yield_impact": "Indirectly affects yield through defoliation. Direct yield reduction in severe cases from blossom and fruit infection. Significant losses in greenhouse production."
+    },
+    {
+        "disease_name": "Tomato Septoria Leaf Spot (Septoria lycopersici)",
+        "leaf_symptoms": "Circular, tan-to-gray spots with darker brown margins. Spots 1.5-6 millimeters (1/16 to 1/4 inch) in diameter. Circular spots with distinct dark margins. Dotted with dark, raised pycnidia inside lesions. Usually appears on lower leaves after first fruit sets. Disease spreads upwards from oldest to youngest growth.",
+        "leaf_effects": "Lesions often surrounded by yellow halo. Numerous spots per leaf characteristically. Leaves turn yellow, then brown, then wither. Defoliation of lower leaves in severe cases.",
+        "plant_growth_effects": "Stem lesions appear similar to leaf lesions but darker. Poor airflow due to canopy closure promotes disease. Overall plant vigor declines from defoliation. Weakened plants more susceptible to other stresses.",
+        "fruit_effects": "Fruit lesions uncommon but appear under very high disease pressure. Fruit infection is rare compared to foliar symptoms. Similar lesions to leaves when fruit affected. Quality reduction in severe epidemics.",
+        "disease_conditions": "Optimal at 68-77°F (20-25°C). High humidity, high dew point, wet conditions favor disease. Lesion development within 5 days, pycnidia form after 14 days. Long periods of high relative humidity ideal.",
+        "yield_impact": "One of most destructive diseases of tomato foliage. Severe defoliation reduces yield potential. Particularly severe in wet, humid areas."
+    },
+    {
+        "disease_name": "Tomato Spider Mites (Tetranychus urticae)",
+        "leaf_symptoms": "Small white or yellow marks on top surface, leaves turn bronze/yellow. Fine stippling marks initially, progressing to larger yellowed areas. Tiny puncture marks from mite feeding, no specific pattern. Fine webbing covers leaves in heavy infestations. Initially on undersides of leaves, move to topsides when populations high. Stippling progresses to yellowing, browning, and leaf death.",
+        "leaf_effects": "Chlorophyll loss causes yellowing and bronzing of leaves. Complete defoliation can occur in severe infestations. Reduced photosynthetic capacity from stippling damage. 30% leaf damage can lead to complete crop loss.",
+        "plant_growth_effects": "Stunted plant growth from reduced photosynthesis. Weakened plants more susceptible to other stresses. Overall plant vigor declines rapidly. Complete plant death possible in severe cases.",
+        "fruit_effects": "Mites can move to fruit surfaces in heavy infestations. Reduced fruit size and quality from plant stress. Fruit quality affected by decreased plant vigor. Direct fruit damage rare but possible.",
+        "disease_conditions": "Rapid development in warm conditions, generation in 5-7 days. Dry, dusty conditions favor mite populations. Up to 20 generations per year possible. Hot, dry greenhouse conditions ideal for reproduction.",
+        "yield_impact": "Complete crop loss possible with 30% leaf damage. 50-fold population increase possible in one week. Major economic impact on tomato industry."
+    },
+    {
+        "disease_name": "Tomato Target Spot (Corynespora cassiicola)",
+        "leaf_symptoms": "Small necrotic areas with chlorotic halos, brown irregular to circular spots. Initially less than 1 millimeter, enlarging to larger circular lesions. Irregular shapes initially becoming circular with concentric rings. Target-like concentric rings inside larger spots. Starts on older leaves and spreads upwards. Small water-soaked lesions become ringed target patterns.",
+        "leaf_effects": "Disease spreads rapidly when conditions are suitable. Severe defoliation occurs in advanced infections. Mature leaves more vulnerable than younger leaves. Chlorotic halos surround necrotic centers.",
+        "plant_growth_effects": "Brown oblong spots appear on stems and petioles. Disease affects seedlings and mature plants at fruit bearing. Overall plant vigor declines from defoliation. Weakened plants from repeated leaf loss.",
+        "fruit_effects": "Small flecks to deeply pitted necrotic areas on fruit. Young fruits show small lesions with darker margins. Ripened fruits develop large circular lesions with cracked centers. Critical fruit infection causes significant yield loss.",
+        "disease_conditions": "Favors warm tropical and subtropical conditions. High humidity promotes rapid disease development. Most problematic during warm, humid periods. Serious disease in greenhouse and field tomatoes.",
+        "yield_impact": "Significant yield loss from fruit infection. Major crop losses in favorable conditions. Serious foliar disease affecting production."
+    },
+    {
+        "disease_name": "Tomato Yellow Leaf Curl Virus (TYLCV)",
+        "leaf_symptoms": "Yellowing of young leaves with distinct upward and downward curling. Affected leaves become smaller and stunted. Characteristic upward and downward leaf curling. Leaves become thick and leathery. Yellowing starts on young leaves, spreads throughout plant. Progressive yellowing and curling of entire canopy.",
+        "leaf_effects": "Severe stunting and bushy appearance of plants. Reduced leaf size and abnormal growth patterns. Complete yellowing of foliage in severe cases. Leaves become rigid and brittle.",
+        "plant_growth_effects": "Severe stunting of overall plant growth. Bushy appearance from shortened internodes. Flower drop occurs prior to fruit set. Dramatically reduced plant vigor.",
+        "fruit_effects": "Flower drop prevents fruit set and development. Dramatically reduced fruit yield when infection occurs. Complete crop loss possible in severe infections. Fruit production essentially eliminated.",
+        "disease_conditions": "Favors warm tropical and subtropical climates. No specific moisture requirements. Transmitted by whitefly vectors during active periods. Devastating in areas with year-round whitefly activity.",
+        "yield_impact": "Complete crop loss possible once established. Ranks third most important tomato virus globally. Devastating losses to tomato crops."
+    },
+    {
+        "disease_name": "Tomato Mosaic Virus (ToMV)",
+        "leaf_symptoms": "Light and dark green mottled pattern on leaves. Normal leaf size but with distinct color patterns. Mosaic pattern of light and dark green areas. Leaves may appear puckered or distorted. Systemic throughout plant, starts on young leaves. Mosaic pattern becomes more pronounced with time.",
+        "leaf_effects": "Distinctive mosaic pattern of green coloration. Leaf distortion and puckering may occur. Reduced photosynthetic efficiency in light green areas. Stunted leaf development.",
+        "plant_growth_effects": "Overall plant stunting and reduced vigor. Shortened internodes and bushy appearance. Reduced flowering and fruit set. Weakened plants more susceptible to other stresses.",
+        "fruit_effects": "Fruit may show mosaic patterns or distortion. Reduced fruit size and quality. Uneven ripening patterns possible. Overall yield reduction from plant stress.",
+        "disease_conditions": "Stable across wide temperature range. Transmitted mechanically, not weather dependent. Can infect throughout growing season. Spread through mechanical contact and contaminated tools.",
+        "yield_impact": "Moderate to severe yield reduction depending on infection timing. Quality losses from fruit distortion. Economic impact from reduced marketability."
+    },
+    {
+        "disease_name": "Tomato Healthy",
+        "leaf_symptoms": "Dark green compound leaves throughout growing season. Normal leaflet size 5-15 centimeters long. Compound leaves with serrated leaflets. Smooth surface with fine hairs, no lesions. Evenly distributed throughout canopy. Maintains healthy color until natural senescence.",
+        "leaf_effects": "No disease symptoms or abnormal coloration. Full photosynthetic capacity maintained. Natural seasonal color changes only. No premature defoliation.",
+        "plant_growth_effects": "Normal plant height 50-200 centimeters depending on type. Strong stems with regular node development. Regular flowering clusters throughout season. Balanced vegetative and reproductive growth.",
+        "fruit_effects": "Fruits develop normal size, color, and shape. Proper flavor development and nutritional content. Good fruit set and cluster development. High-quality marketable fruit.",
+        "disease_conditions": "Thrives in warm temperatures 18-29°C (65-85°F). Requires consistent moisture with good drainage. Maintains health throughout growing season. Adapts to typical tomato-growing climate conditions.",
+        "yield_impact": "Consistent fruit production throughout season. High-quality tomatoes suitable for fresh market or processing. Normal yield for variety and growing conditions."
+    }
+]

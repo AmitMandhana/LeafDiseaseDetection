@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="820" viewBox="0 0 1200 820" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill:#ffffff; stroke:#1f6feb; stroke-width:2; rx:8; }
+    .sub { fill:#f1f5f9; stroke:#cbd5e1; stroke-width:1; rx:6; }
+    .title { font-family: Arial, Helvetica, sans-serif; font-size:16px; fill:#042c5c; font-weight:600; }
+    .lbl { font-family: Arial, Helvetica, sans-serif; font-size:13px; fill:#0b3b66; }
+    .small { font-family: Arial, Helvetica, sans-serif; font-size:12px; fill:#123; }
+    .arrow { stroke:#1f6feb; stroke-width:2; fill:none; marker-end:url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f6feb" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="20" y="30" class="title">Detailed Transformer + Retrieval Architecture (MiniLM & Softmax fine-tune)</text>
+
+  <!-- Input Tokenization -->
+  <rect x="20" y="60" width="360" height="120" class="box" />
+  <text x="40" y="92" class="lbl">1) Input text & Tokenization</text>
+  <text x="40" y="114" class="small">"Leaves yellow with brown spots" → tokens, ids, attention mask</text>
+
+  <!-- Embedding -->
+  <rect x="420" y="60" width="340" height="120" class="box" />
+  <text x="440" y="92" class="lbl">2) Token Embeddings + Positional Encodings</text>
+  <text x="440" y="114" class="small">token_id → E[token_id]; add positional vector p_i</text>
+
+  <path d="M380 120 L420 120" class="arrow" />
+
+  <!-- Transformer block (stack) -->
+  <rect x="20" y="220" width="740" height="240" class="box" />
+  <text x="40" y="250" class="lbl">3) Transformer Encoder Stack (L layers)</text>
+
+  <!-- show single layer detail -->
+  <rect x="60" y="280" width="220" height="140" class="sub" />
+  <text x="80" y="305" class="lbl">Multi-Head Self-Attention</text>
+  <text x="80" y="325" class="small">Q= XW^Q, K= XW^K, V= XW^V</text>
+  <text x="80" y="345" class="small">Att = softmax(QK^T / sqrt(d_k)) V</text>
+
+  <rect x="310" y="280" width="220" height="140" class="sub" />
+  <text x="330" y="305" class="lbl">Add & LayerNorm</text>
+  <text x="330" y="325" class="small">x ← LayerNorm(x + Att(x))</text>
+
+  <rect x="560" y="280" width="180" height="140" class="sub" />
+  <text x="580" y="305" class="lbl">FFN (position-wise)</text>
+  <text x="580" y="325" class="small">FFN(x) = W2 * GeLU(W1 * x + b1) + b2</text>
+  <text x="580" y="345" class="small">Then Add & LayerNorm</text>
+
+  <!-- arrows inside transformer -->
+  <path d="M280 350 L310 350" class="arrow" />
+  <path d="M530 350 L560 350" class="arrow" />
+
+  <!-- Pooling -->
+  <rect x="20" y="490" width="360" height="120" class="box" />
+  <text x="40" y="522" class="lbl">4) Pooling (Mean over tokens)</text>
+  <text x="40" y="544" class="small">s = (Σ m_i H_i) / (Σ m_i)  — result: fixed-size sentence embedding</text>
+
+  <path d="M380 550 L420 550" class="arrow" />
+
+  <!-- Training head -->
+  <rect x="420" y="490" width="340" height="120" class="box" />
+  <text x="440" y="522" class="lbl">5) Softmax Classifier (training only)</text>
+  <text x="440" y="544" class="small">z = W s + b  → softmax → cross-entropy (SoftmaxLoss)</text>
+  <text x="440" y="564" class="small">Optimizes encoder + head; warmup steps, AdamW</text>
+
+  <!-- Inference path -->
+  <rect x="20" y="640" width="1140" height="140" fill="#ffffff" stroke="#e2e8f0" rx="8" />
+  <text x="40" y="670" class="lbl">Inference: Query Embedding & Retrieval</text>
+
+  <rect x="80" y="700" width="240" height="70" class="sub" />
+  <text x="110" y="735" class="lbl">Query Embedding (q)</text>
+
+  <rect x="360" y="700" width="240" height="70" class="sub" />
+  <text x="390" y="735" class="lbl">Corpus Embeddings (precomputed)</text>
+
+  <path d="M320 735 L360 735" class="arrow" />
+
+  <rect x="640" y="700" width="420" height="70" class="sub" />
+  <text x="660" y="735" class="lbl">Cosine Similarity & Top-k Retrieval</text>
+  <text x="660" y="755" class="small">topk = torch.topk(util.pytorch_cos_sim(q, corpus), k=1)</text>
+
+  <!-- legend / notes -->
+  <text x="800" y="260" class="small">MiniLM-L6: 6 layers, small & fast for CPU</text>
+  <text x="800" y="280" class="small">SoftmaxLoss: creates discriminative clusters for retrieval</text>
+
+</svg>

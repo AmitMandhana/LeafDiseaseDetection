@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="1100" viewBox="0 0 1400 1100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill:#ffffff; stroke:#0b66c2; stroke-width:2; rx:10; }
+    .sub { fill:#f6fbff; stroke:#cfe6ff; stroke-width:1; rx:8; }
+    .title { font-family: Arial, Helvetica, sans-serif; font-size:20px; fill:#073763; font-weight:700; }
+    .lbl { font-family: Arial, Helvetica, sans-serif; font-size:14px; fill:#073763; }
+    .small { font-family: Arial, Helvetica, sans-serif; font-size:12px; fill:#123; }
+    .arrow { stroke:#0b66c2; stroke-width:2.2; fill:none; marker-end:url(#arr); }
+    .dashed { stroke:#0b66c2; stroke-width:1.2; stroke-dasharray:6 4; fill:none; }
+  </style>
+  <defs>
+    <marker id="arr" markerWidth="12" markerHeight="10" refX="12" refY="5" orient="auto">
+      <polygon points="0 0, 12 5, 0 10" fill="#0b66c2" />
+    </marker>
+  </defs>
+
+  <text x="20" y="34" class="title">train_finetune.py — MiniLM fine-tuning architecture (detailed)</text>
+  <text x="20" y="60" class="small">This diagram shows the data synthesis, model internals (MiniLM transformer L=6), pooling, classifier head, and training loop used in `train_finetune.py`.</text>
+
+  <!-- Left column: Data synthesis -->
+  <rect x="20" y="90" width="360" height="160" class="box" />
+  <text x="36" y="120" class="lbl">1) Data synthesis (train_finetune.py)</text>
+  <text x="36" y="142" class="small">Reads `disease_data.json` entries → extracts fields:</text>
+  <text x="36" y="160" class="small">• leaf_symptoms, fruit_effects, disease_conditions, plant_growth_effects</text>
+  <text x="36" y="178" class="small">• Templates generate farmer-style queries (e.g. "Leaves are {}")</text>
+  <text x="36" y="196" class="small">• Per entry: n queries (default n=6) → labels via label_map</text>
+
+  <rect x="20" y="265" width="360" height="70" class="sub" />
+  <text x="36" y="300" class="lbl">Creates InputExample(texts=[q,q], label=lid)</text>
+  <text x="36" y="320" class="small">(duplicate text used to satisfy SoftmaxLoss API expecting pairs)</text>
+
+  <path d="M380 320 L420 320" class="arrow" />
+
+  <!-- Tokenization & Embedding -->
+  <rect x="420" y="90" width="520" height="120" class="box" />
+  <text x="440" y="120" class="lbl">2) Tokenization & Input Embeddings</text>
+  <text x="440" y="142" class="small">Tokenizer (subword): text → token ids, attention_mask</text>
+  <text x="440" y="160" class="small">Embedding: token_id → Embedding vector E[token_id] ∈ R^d; add Positional Encoding p_i</text>
+
+  <path d="M940 140 L980 140" class="arrow" />
+
+  <!-- Transformer stack area -->
+  <rect x="980" y="60" width="380" height="320" class="box" />
+  <text x="1000" y="92" class="lbl">3) MiniLM Transformer Encoder (L = 6 layers)</text>
+  <text x="1000" y="112" class="small">Each layer: Multi-Head Self-Attention → Add & LayerNorm → FFN → Add & LayerNorm</text>
+
+  <!-- Single layer detail -->
+  <rect x="1000" y="140" width="170" height="140" class="sub" />
+  <text x="1016" y="168" class="lbl">Multi-Head Self-Attention</text>
+  <text x="1016" y="188" class="small">Q = X W^Q, K = X W^K, V = X W^V</text>
+  <text x="1016" y="206" class="small">Attention = softmax(Q K^T / √d_k) V</text>
+  <text x="1016" y="224" class="small">Concatenate heads, linear proj back to d</text>
+
+  <rect x="1188" y="140" width="170" height="140" class="sub" />
+  <text x="1204" y="168" class="lbl">FFN (Position-wise)</text>
+  <text x="1204" y="188" class="small">FFN(x) = W2 · GeLU(W1 · x + b1) + b2</text>
+  <text x="1204" y="206" class="small">Residual + LayerNorm after both sub-layers</text>
+
+  <!-- show stacking arrow and L=6 label -->
+  <path d="M1090 290 L1090 340" class="dashed" />
+  <text x="1096" y="360" class="small">repeated L=6 times (MiniLM-L6)</text>
+
+  <!-- Hidden state out to pooling -->
+  <path d="M1180 380 L760 380" class="arrow" />
+
+  <!-- Pooling -->
+  <rect x="420" y="400" width="520" height="120" class="box" />
+  <text x="440" y="430" class="lbl">4) Pooling (Sentence embedding)</text>
+  <text x="440" y="452" class="small">Mean pooling over token hidden states (mask-aware)</text>
+  <text x="440" y="472" class="small">s = (Σ_i m_i H_i) / (Σ_i m_i)  → s ∈ R^d</text>
+  <text x="440" y="492" class="small">Optionally L2-normalize embedding for cosine retrieval</text>
+
+  <path d="M760 460 L820 460" class="arrow" />
+
+  <!-- Classifier head (training) -->
+  <rect x="860" y="420" width="380" height="120" class="box" />
+  <text x="880" y="452" class="lbl">5) Classifier Head (SoftmaxLoss) — training only</text>
+  <text x="880" y="474" class="small">Logits z = W · s + b  (W ∈ R^{C×d})</text>
+  <text x="880" y="494" class="small">Softmax + Cross-Entropy: Loss = -log softmax(z_y)</text>
+  <text x="880" y="514" class="small">Updates: encoder parameters + classifier MLP (via AdamW)</text>
+
+  <!-- Training loop & optimizer -->
+  <rect x="20" y="520" width="360" height="160" class="box" />
+  <text x="36" y="552" class="lbl">6) Training loop (train_finetune.py)</text>
+  <text x="36" y="574" class="small">• Build DataLoader from InputExample list (batch_size=16)</text>
+  <text x="36" y="594" class="small">• Loss: SoftmaxLoss (sentence_embedding_dimension, num_labels)</text>
+  <text x="36" y="614" class="small">• model.fit(train_objectives=[(dataloader, loss)], epochs=3, warmup_steps=10)</text>
+  <text x="36" y="634" class="small">• Optimizer: AdamW; warmup used to ramp LR at start</text>
+
+  <path d="M380 640 L420 640" class="arrow" />
+
+  <!-- Save model -->
+  <rect x="420" y="520" width="820" height="120" class="box" />
+  <text x="440" y="552" class="lbl">7) Save & Output</text>
+  <text x="440" y="574" class="small">model.save('model_finetuned/')</text>
+  <text x="440" y="594" class="small">write label_map.json alongside the model for inference mapping</text>
+
+  <!-- Notes and math sidebar -->
+  <rect x="20" y="700" width="1280" height="360" class="sub" />
+  <text x="36" y="732" class="lbl">Notes — what/why/important formulas</text>
+  <text x="36" y="754" class="small">• Why duplicate text in InputExample: preserves simple single-sentence supervision for SoftmaxLoss API.</text>
+  <text x="36" y="774" class="small">• Attention formula (per head): Attention(Q,K,V) = softmax(QK^T / √d_k) V</text>
+  <text x="36" y="794" class="small">• Mean pooling: s = (Σ m_i H_i) / (Σ m_i)</text>
+  <text x="36" y="814" class="small">• SoftmaxLoss clusters class examples in embedding space — improves nearest-neighbor retrieval.</text>
+  <text x="36" y="834" class="small">• Edge cases: class imbalance, tiny classes, very short queries — consider augmentation or contrastive loss if needed.</text>
+  <text x="36" y="854" class="small">• Practical tip: cache corpus embeddings for the app to avoid recomputing at startup.</text>
+
+</svg>
